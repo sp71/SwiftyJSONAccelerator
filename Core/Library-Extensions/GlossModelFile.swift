@@ -42,7 +42,7 @@ struct GlossModelFile: ModelFile, DefaultModelFileComponent {
     }
 
     func mainBodyTemplateFileName() -> String {
-        return "GlossJSONTemplate"
+        return "GlossTemplate"
     }
 
     mutating func generateAndAddComponentsFor(_ property: PropertyComponent) {
@@ -88,22 +88,26 @@ struct GlossModelFile: ModelFile, DefaultModelFileComponent {
         }
     }
 
+    func genPrimitiveVariableDeclaration(_ name: String, _ type: String) -> String {
+        return "public var \(name): \(type)"
+    }
+
     // MARK: - Customised methods for SWiftyJSON
     // MARK: - Initialisers
     func genInitializerForVariable(_ name: String, _ type: String, _ constantName: String) -> String {
-        return "\(name) = \(constantName) <~~ json"
+        return "guard let \(name): \(type) = \(constantName) <~~ json else {\n\t\tprint(\"\(fileName) \(name) could not be found\")\n\t\treturn nil\n\t}"
     }
 
     func genInitializerForObject(_ name: String, _ type: String, _ constantName: String) -> String {
-        return "\(name) = \(constantName) <~~ json"
+        return "guard let \(name): \(type) = \(constantName) <~~ json else {\n\t\tprint(\"\(fileName) \(name) could not be found\")\n\t\treturn nil\n\t}"
     }
 
     func genInitializerForObjectArray(_ name: String, _ type: String, _ constantName: String) -> String {
-        return "\(name) = \(constantName) <~~ json"
+        return "guard let \(name): \(type) = \(constantName) <~~ json else {\n\t\tprint(\"\(fileName) \(name) could not be found\")\n\t\treturn nil\n\t}"
     }
 
     func genInitializerForPrimitiveArray(_ name: String, _ type: String, _ constantName: String) -> String {
-        return "\(name) = \(constantName) <~~ json"
+        return "guard let \(name): \(type) = \(constantName) <~~ json else {\n\t\tprint(\"\(fileName) \(name) could not be found\")\n\t\treturn nil\n\t}"
     }
     
 }

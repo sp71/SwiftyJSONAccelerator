@@ -1,6 +1,8 @@
 // MARK: Gloss Initializers
+
 /// Map a JSON object to this class using Gloss.
 ///
-/// - parameter json: JSON to consume data from
-public{REQUIRED}init?(json: JSON) {
+/// - parameter json: JSON object to consume.
+public{REQUIRED}init(json: JSON) {
+{INITIALIZER}
 }
