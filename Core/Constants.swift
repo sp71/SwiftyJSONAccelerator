@@ -49,9 +49,10 @@ enum ConstructType: String {
  - Marshal: Marshal - https://github.com/utahiosmac/Marshal
  */
 enum JSONMappingLibrary: String {
-  case SwiftyJSON
-  case ObjectMapper
-  case Marshal
+    case SwiftyJSON
+    case ObjectMapper
+    case Marshal
+    case Gloss
 }
 
 /**

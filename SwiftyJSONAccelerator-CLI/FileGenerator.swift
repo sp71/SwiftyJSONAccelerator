@@ -39,6 +39,13 @@ struct FileGenerator {
             return "//\n//  {OBJECT_NAME}.swift\n//\n//  Created by __NAME__ on {DATE}\n//  Copyright (c) __MyCompanyName__. All rights reserved.\n//\n\nimport Foundation{INCLUDE_HEADER}\n\npublic{IS_FINAL}{OBJECT_KIND} {OBJECT_NAME}{EXTENDED_OBJECT_COLON}{EXTEND_FROM} {\n\n  // MARK: Declaration for string constants to be used to decode and also serialize.\n  private struct SerializationKeys {\n{STRING_CONSTANT}\n  }\n\n  // MARK: Properties\n{DECLARATION}\n\n{JSON_PARSER_LIBRARY_BODY}\n  /// Generates description of the object in the form of a NSDictionary.\n  ///\n  /// - returns: A Key value pair containing all valid values in the object.\n  public func dictionaryRepresentation() -> [String: Any] {\n    var dictionary: [String: Any] = [:]\n{DESCRIPTION}\n    return dictionary\n  }\n{NSCODING_SUPPORT}\n}\n"
         case "NSCodingTemplate":
             return "\n  // MARK: NSCoding Protocol\n  required public init(coder aDecoder: NSCoder) {\n{DECODERS}\n  }\n\n  public func encode(with aCoder: NSCoder) {\n{ENCODERS}\n  }\n"
+        case "GlossTemplate":
+            return "// MARK: Gloss Initializers"
+            /// Map a JSON object to this class using Gloss.
+            ///
+            /// - parameter json: JSON to consume data from
+//            public{REQUIRED}init?(json: JSON) {
+//            }"
         default:
             throw NSError.init(domain: "SwiftyJSONAccelerator", code: 0, userInfo: nil)
         }

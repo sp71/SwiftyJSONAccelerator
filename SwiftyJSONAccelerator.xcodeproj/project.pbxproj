@@ -108,6 +108,8 @@
 		93F174451BD0707D007E7DFC /* SJEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F174441BD0707D007E7DFC /* SJEditorViewController.swift */; };
 		93F174471BD0707D007E7DFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93F174461BD0707D007E7DFC /* Assets.xcassets */; };
 		93F174601BD070AA007E7DFC /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F1745F1BD070AA007E7DFC /* JSONHelper.swift */; };
+		ABA408281E69F02100556760 /* GlossModelFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA408271E69F02100556760 /* GlossModelFile.swift */; };
+		ABA4082A1E69FBDB00556760 /* GlossTemplate.txt in Resources */ = {isa = PBXBuildFile; fileRef = ABA408291E69FBDB00556760 /* GlossTemplate.txt */; };
 		C667011B1BDCABCE009BA254 /* SwiftyJSONTemplate.txt in Resources */ = {isa = PBXBuildFile; fileRef = C667011A1BDCABCE009BA254 /* SwiftyJSONTemplate.txt */; };
 		C667011D1BDCAF23009BA254 /* ObjectMapperTemplate.txt in Resources */ = {isa = PBXBuildFile; fileRef = C667011C1BDCAF23009BA254 /* ObjectMapperTemplate.txt */; };
 		C667011F1BDCBE1F009BA254 /* NSCodingTemplate.txt in Resources */ = {isa = PBXBuildFile; fileRef = C667011E1BDCBE1F009BA254 /* NSCodingTemplate.txt */; };
@@ -186,6 +188,8 @@
 		93F174501BD0707D007E7DFC /* SwiftyJSONAccelerator.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyJSONAccelerator.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F174561BD0707D007E7DFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93F1745F1BD070AA007E7DFC /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
+		ABA408271E69F02100556760 /* GlossModelFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlossModelFile.swift; sourceTree = "<group>"; };
+		ABA408291E69FBDB00556760 /* GlossTemplate.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GlossTemplate.txt; sourceTree = "<group>"; };
 		C667011A1BDCABCE009BA254 /* SwiftyJSONTemplate.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftyJSONTemplate.txt; sourceTree = "<group>"; };
 		C667011C1BDCAF23009BA254 /* ObjectMapperTemplate.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectMapperTemplate.txt; sourceTree = "<group>"; };
 		C667011E1BDCBE1F009BA254 /* NSCodingTemplate.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSCodingTemplate.txt; sourceTree = "<group>"; };
@@ -381,6 +385,7 @@
 				9327F2871DF4BCA70002BE40 /* MarshalModelFile.swift */,
 				93F1593F1CFF96E700175636 /* ObjectMapperModelFile.swift */,
 				93F1593D1CFF969900175636 /* SwiftyJSONModelFile.swift */,
+				ABA408271E69F02100556760 /* GlossModelFile.swift */,
 			);
 			path = "Library-Extensions";
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 				9327F2891DF4BD540002BE40 /* MarshalTemplate.txt */,
 				C667011C1BDCAF23009BA254 /* ObjectMapperTemplate.txt */,
 				C667011A1BDCABCE009BA254 /* SwiftyJSONTemplate.txt */,
+				ABA408291E69FBDB00556760 /* GlossTemplate.txt */,
 			);
 			path = "Library-Extension-Templates";
 			sourceTree = "<group>";
@@ -491,7 +497,6 @@
 				93F1743B1BD0707D007E7DFC /* Sources */,
 				93F1743C1BD0707D007E7DFC /* Frameworks */,
 				93F1743D1BD0707D007E7DFC /* Resources */,
-				930462B91D311F9100FE61A6 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -537,7 +542,7 @@
 					};
 					93F1743E1BD0707D007E7DFC = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = UYGU8PDBPS;
+						DevelopmentTeam = JKHSM9GPY5;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -575,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93C273CB1E150CEA00CC1AED /* Main.storyboard in Resources */,
+				ABA4082A1E69FBDB00556760 /* GlossTemplate.txt in Resources */,
 				C667011B1BDCABCE009BA254 /* SwiftyJSONTemplate.txt in Resources */,
 				C667011F1BDCBE1F009BA254 /* NSCodingTemplate.txt in Resources */,
 				93F174471BD0707D007E7DFC /* Assets.xcassets in Resources */,
@@ -603,23 +609,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		930462B91D311F9100FE61A6 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		933CF38F1E11699600F9C412 /* Sources */ = {
@@ -691,6 +680,7 @@
 				93F174431BD0707D007E7DFC /* AppDelegate.swift in Sources */,
 				93E91B0D1CFF2DFF00ECA2A6 /* Constants.swift in Sources */,
 				93F159381CFF842D00175636 /* JSON+Helpers.swift in Sources */,
+				ABA408281E69F02100556760 /* GlossModelFile.swift in Sources */,
 				93F159401CFF96E700175636 /* ObjectMapperModelFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -867,7 +857,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UYGU8PDBPS;
+				DEVELOPMENT_TEAM = JKHSM9GPY5;
 				INFOPLIST_FILE = SwiftyJSONAccelerator/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -884,7 +874,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UYGU8PDBPS;
+				DEVELOPMENT_TEAM = JKHSM9GPY5;
 				INFOPLIST_FILE = SwiftyJSONAccelerator/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;

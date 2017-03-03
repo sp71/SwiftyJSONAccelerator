@@ -191,6 +191,8 @@ class SJEditorViewController: NSViewController, NSTextViewDelegate {
             return JSONMappingLibrary.ObjectMapper
         } else if index == 3 {
             return JSONMappingLibrary.Marshal
+        } else if index == 4 {
+            return JSONMappingLibrary.Gloss
         }
         return JSONMappingLibrary.SwiftyJSON
     }
