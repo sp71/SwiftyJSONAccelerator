@@ -3,6 +3,6 @@
   /// Map a JSON object to this class using Gloss.
   ///
   /// - parameter json: JSON object to consume.
-  public{REQUIRED}init(json: JSON) {
+  public{REQUIRED}init?(json: JSON) {
 {INITIALIZER}
   }

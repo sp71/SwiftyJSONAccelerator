@@ -89,25 +89,32 @@ struct GlossModelFile: ModelFile, DefaultModelFileComponent {
     }
 
     func genPrimitiveVariableDeclaration(_ name: String, _ type: String) -> String {
-        return "public var \(name): \(type)"
+        return "var \(name): \(type)"
     }
 
     // MARK: - Customised methods for SWiftyJSON
     // MARK: - Initialisers
     func genInitializerForVariable(_ name: String, _ type: String, _ constantName: String) -> String {
-        return "guard let \(name): \(type) = \(constantName) <~~ json else {\n\t\tprint(\"\(fileName) \(name) could not be found\")\n\t\treturn nil\n\t}"
+        return "guard let \(name): \(type) = \(constantName) <~~ json else {\n\t\tprint(\"\(fileName) \(name) could not be found\")\n\t\treturn nil\n\t}\n\tself.\(name) = \(name)"
     }
 
     func genInitializerForObject(_ name: String, _ type: String, _ constantName: String) -> String {
-        return "guard let \(name): \(type) = \(constantName) <~~ json else {\n\t\tprint(\"\(fileName) \(name) could not be found\")\n\t\treturn nil\n\t}"
+        return "guard let \(name): \(type) = \(constantName) <~~ json else {\n\t\tprint(\"\(fileName) \(name) could not be found\")\n\t\treturn nil\n\t}\n\tself.\(name) = \(name)"
     }
 
     func genInitializerForObjectArray(_ name: String, _ type: String, _ constantName: String) -> String {
-        return "guard let \(name): \(type) = \(constantName) <~~ json else {\n\t\tprint(\"\(fileName) \(name) could not be found\")\n\t\treturn nil\n\t}"
+        return "guard let \(name): \(type) = \(constantName) <~~ json else {\n\t\tprint(\"\(fileName) \(name) could not be found\")\n\t\treturn nil\n\t}\n\tself.\(name) = \(name)"
     }
 
     func genInitializerForPrimitiveArray(_ name: String, _ type: String, _ constantName: String) -> String {
-        return "guard let \(name): \(type) = \(constantName) <~~ json else {\n\t\tprint(\"\(fileName) \(name) could not be found\")\n\t\treturn nil\n\t}"
+        return "guard let \(name): \(type) = \(constantName) <~~ json else {\n\t\tprint(\"\(fileName) \(name) could not be found\")\n\t\treturn nil\n\t}\n\tself.\(name) = \(name)"
     }
-    
+
+    func genDescriptionForPrimitive(_ name: String, _ type: String, _ constantName: String) -> String {
+        if type == VariableType.Bool.rawValue {
+            return "dictionary[\(constantName)] = \(name)"
+        }
+        return "if let value = \(name) { dictionary[\(constantName)] = value }"
+    }
+
 }

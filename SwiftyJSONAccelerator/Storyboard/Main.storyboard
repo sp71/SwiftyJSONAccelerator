@@ -420,7 +420,7 @@
                                     <menu key="menu" autoenablesItems="NO" id="QJi-PT-im1">
                                         <items>
                                             <menuItem title="Gloss (Default)" hidden="YES" id="iCO-48-w0k"/>
-                                            <menuItem title="Gloss" id="0QP-u9-O6V"/>
+                                            <menuItem title="Gloss (Default)" id="0QP-u9-O6V"/>
                                             <menuItem title="SwiftyJSON" id="mkQ-rW-3gF"/>
                                             <menuItem title="ObjectMapper" id="FPc-o9-hXy"/>
                                             <menuItem title="Marshal" id="7Q8-u2-Yfm"/>
